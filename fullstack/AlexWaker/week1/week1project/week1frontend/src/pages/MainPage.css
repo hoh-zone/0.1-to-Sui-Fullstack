@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1a202c; /* 暗色背景 */
+    color: white;
+  }
+  
+  .app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background-color: #2d3748;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .nav a {
+    margin-right: 16px;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .nav a:hover {
+    text-decoration: underline;
+  }
+  
+  .buttons button {
+    margin-left: 8px;
+    padding: 8px 16px;
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .buttons .signup {
+    background-color: white;
+    color: black;
+  }
+  
+  .buttons .signup:hover {
+    background-color: #e2e8f0;
+  }
+  
+  .main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    margin-top: 0;
+  }
+  
+  .main-title {
+    font-size: 1.5rem; /*相对于根元素的字体大小*/
+    font-weight: bold;
+    color: #4be9e9;
+    margin-bottom: 10px;
+  }
+  
+  .main-description {
+    font-size: 1rem;
+    font-weight: normal;
+    color: #ffffff;
+    margin-top: 0;
+    word-wrap: break-word;
+  }
+  
+  .main-content {
+    flex: 1;
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: #ffffff;
+    margin-top: 0;
+  }
+  
+  
+  .search-box {
+    margin-top: 10px; 
+  }
+  
+  .footer {
+    text-align: center;
+    padding: 8px;
+    background-color: #2d3748;
+    color: #a0aec0;
+    margin-bottom: 0;
+  }
+  

@@ -1,5 +1,5 @@
 
-module admin::week_one_alt {
+module weekone::week_one_alt {
     //==============================================================================================
     // Dependencies
     //==============================================================================================
@@ -99,5 +99,5 @@ module admin::week_one_alt {
     }
 }
 
-//package id: 0x80d98815f906afd821df13e2aac860d6e62bbb0d9dec418f623162c5c412b443
-//state id: 0x2408c2766084c9bcb2d923a7473790728bd6c4ea4b4b658fa36db77bcba67067
+//packageid: 0xe551ce116a4515e0317939e0dfe6debf117c1378bd8f248bf61e432b540760fc
+//state: 0xb7879ae978e0407c7e4c94a0e90410fc1051a3c2476566638567fbc208e5d624
