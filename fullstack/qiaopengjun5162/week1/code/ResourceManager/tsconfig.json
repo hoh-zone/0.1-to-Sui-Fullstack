@@ -1,0 +1,23 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ],
+  "compilerOptions": {
+    // ... existing code ...
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@components/*": ["src/components/*"],
+      "@pages/*": ["src/pages/*"],
+      "@abi/*": ["src/abi/*"],
+      "@store/*": ["src/store/*"],
+      "@utils/*": ["src/utils/*"] // 添加其他需要的别名
+    }
+  }
+}

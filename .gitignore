@@ -134,3 +134,4 @@ build
 .vscode
 # production
 **/build
+.codegpt
