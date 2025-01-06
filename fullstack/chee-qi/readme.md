@@ -8,6 +8,10 @@
 ## 作业
 
 - [] 第一周: ![task1](./images/task1.png)
+  前端
+  ![task1.1](./images/task1.1.png)
+  调用记录
+  ![task1.2](./images/task1.2.png)
 - [] 第二周:
 - [] 第三周:
 - [] 第四周:

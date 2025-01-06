@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+}
+
+@layer base {
+  :root {
+    --main-color: rgb(124, 235, 250);
+    --main-bg-color: rgba(65, 209, 235, 0.36);
+    --pattern-color: rgba(46, 207, 213, 0.073);
+    --blue-c: rgb(124, 235, 250);
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --warning: 45 85% 47%; /* HSL */
+    --warning-foreground: 0 0% 10%;
+  }
+}
+.Button_buttonVariants__x1s81q0 {
+  /* background: #a2deff !important;
+  
+  box-shadow: rgba(143, 215, 256, 0.55) 0px 5px 15px 0px !important; */
+  /* in scss with just one variable i can change opacity with rgba(variable, opacity) but in css it's not possible so i have used three seperate variables */
+  /* with hue-rotate color can be changed */
+
+  /* change this rotation value */
+  filter: hue-rotate(0deg) !important;
+
+  cursor: pointer;
+  text-transform: uppercase;
+  background: radial-gradient(
+      circle,
+      var(--main-bg-color) 0%,
+      rgba(0, 0, 0, 0) 95%
+    ),
+    linear-gradient(var(--pattern-color) 1px, transparent 1px),
+    linear-gradient(to right, var(--pattern-color) 1px, transparent 1px) !important;
+  background-size:
+    cover,
+    15px 15px,
+    15px 15px !important;
+  background-position:
+    center center,
+    center center,
+    center center !important;
+  border-image: radial-gradient(
+      circle,
+      var(--main-color) 0%,
+      rgba(0, 0, 0, 0) 100%
+    )
+    1 !important;
+  border-width: 1px 0 1px 0;
+  color: var(--main-color) !important;
+  padding: 1rem 3rem;
+  font-weight: 700;
+  transition: background-size 0.2s ease-in-out;
+}
+
+.Button_buttonVariants__x1s81q0 :hover {
+  cursor: pointer;
+  background-size:
+    cover,
+    10px 10px,
+    10px 10px !important;
+}
+.Button_buttonVariants__x1s81q0 :active {
+  filter: hue-rotate(250deg) !important;
+}
+.Text__2bv1ur0 {
+  color: var(--main-color) !important;
+}
+.AccountDropdownMenu_menuItem__div2ql3 {
+  color: var(--main-color) !important;
+}
+.AccountDropdownMenu_menuItem__div2ql3 svg path {
+  fill: var(--main-color) !important;
+}
+.AccountDropdownMenu_menuContainer__div2ql1,
+.AccountDropdownMenu_switchAccountMenuItem__div2ql4 {
+  cursor: pointer;
+  background: radial-gradient(
+      circle,
+      var(--main-bg-color) 0%,
+      rgba(0, 0, 0, 0) 95%
+    ),
+    linear-gradient(var(--pattern-color) 1px, transparent 1px),
+    linear-gradient(to right, var(--pattern-color) 1px, transparent 1px) !important;
+}

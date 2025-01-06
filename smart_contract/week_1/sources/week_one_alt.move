@@ -98,3 +98,6 @@ module admin::week_one_alt {
         init(ctx);
     }
 }
+
+//package id: 0x80d98815f906afd821df13e2aac860d6e62bbb0d9dec418f623162c5c412b443
+//state id: 0x2408c2766084c9bcb2d923a7473790728bd6c4ea4b4b658fa36db77bcba67067
