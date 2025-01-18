@@ -10,7 +10,14 @@
 ## 作业
 - [x] 第一周:![001](./images/week1/week-1-create-profile.jpg)
             ![002](./images/week1/week-1-profile-list.jpg)
-- [] 第二周:
+- [] 第二周: ![001](./images/week2/week-2-live-1.jpg)
+            ![002](./images/week2/week-2-live-2.jpg)
+            ![003](./images/week2/week-2-live-2-2.jpg)
+            ![004](./images/week2/week-2-live-3.jpg)
+            ![005](./images/week2/week2-profile-list.png)
+            ![006](./images/week2/week2-profile-list-create-folder.png)
+            ![007](./images/week2/week2-add-coin-to-folder.png)
+
 - [] 第三周:
 - [] 第四周:
 
