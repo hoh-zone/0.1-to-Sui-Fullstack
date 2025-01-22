@@ -55,9 +55,12 @@ function Index() {
             nftArr.push(suiObject)
           }
         })
-        setCoinList([...coinArr])
-        setNftList([...nftArr])
+        setCoinList(coinArr)
+        setNftList(nftArr)
+        
+        console.log("coinList", coinList)
       } 
+      
       // 查询Folder
       
     }
