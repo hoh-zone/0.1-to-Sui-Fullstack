@@ -1,4 +1,4 @@
-import { IContent, IProfile } from "@/type";
+import { IContent, IFolder, IProfile } from "@/type";
 import { suiClient, networkConfig } from "../networkConfig";
 import { SuiParsedData } from "@mysten/sui/client";
 
@@ -45,6 +45,19 @@ export const queryObject = async (address: string) => {
 };
 
 // 查询Folder
-export const queryFolder = () => {
-  
-}
+export const queryFolder = async (addresses: string[]) => {
+  const result = await suiClient.multiGetObjects({
+    ids: addresses,
+    options: {
+      showContent: true
+    },
+  });
+  const folderArr = result.map((item) => {
+    const content = item.data?.content as SuiParsedData
+    if (!("fields" in content)) {
+      throw new Error("Invalid profile data structure");
+    }
+    return content.fields as unknown as IFolder
+  })
+  return folderArr
+};
