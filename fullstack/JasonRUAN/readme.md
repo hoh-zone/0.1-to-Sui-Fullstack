@@ -15,7 +15,21 @@
 
 ## b站，推特关注
 
-- [] b站，推特关注截图: ![关注截图](./images/你的图片地址)
+- [x] b站，推特关注截图: 
+
+  - **YouTube**
+
+  ![Clipboard_Screenshot_1737820155](./assets/Clipboard_Screenshot_1737820155.png)
+
+  - **B站**
+
+  ![Clipboard_Screenshot_1737820219](./assets/Clipboard_Screenshot_1737820219.png)
+
+  - **Twitter**
+
+  ![Clipboard_Screenshot_1737820304](./assets/Clipboard_Screenshot_1737820304.png)
+
+  
 
 ## 为共学营宣传（在朋友圈或者群聊中转发海报/文章）
 
@@ -23,10 +37,27 @@
 
 ## 每周课程学习
 
-- [] 第一周:![学习记录截图](./images/你的图片地址)
-- [] 第二周:![学习记录截图](./images/你的图片地址)
-- [] 第三周:![学习记录截图](./images/你的图片地址)
-- [] 第四周:![学习记录截图](./images/你的图片地址)
+![Clipboard_Screenshot_1737821707](./assets/Clipboard_Screenshot_1737821707.png)
+
+- [x] 第一周:
+
+  ![Clipboard_Screenshot_1737821959](./assets/Clipboard_Screenshot_1737821959.png)
+
+  ![Clipboard_Screenshot_1737821930](./assets/Clipboard_Screenshot_1737821930.png)
+
+- [x] 第二周:
+
+  ![Clipboard_Screenshot_1737821892](./assets/Clipboard_Screenshot_1737821892.png)
+
+  ![Clipboard_Screenshot_1737821907](./assets/Clipboard_Screenshot_1737821907.png)
+
+- [x] 第三周:
+
+![Clipboard_Screenshot_1737821839](./assets/Clipboard_Screenshot_1737821839.png)	![Clipboard_Screenshot_1737821785](./assets/Clipboard_Screenshot_1737821785.png)
+
+- [x] 第四周:
+
+  ![Clipboard_Screenshot_1737820335](./assets/Clipboard_Screenshot_1737820335.png)
 
 ## 参加直播答疑
 
@@ -63,5 +94,4 @@
 ## 提交项目
 
 - [] 项目提交![项目截图](./images/你的图片地址)
-
 
