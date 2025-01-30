@@ -70,6 +70,7 @@
 - [] 第二篇笔记
 * https://learnblockchain.cn/article/10673
 - [] 第三篇笔记
+* https://learnblockchain.cn/article/10675
 - [] 第四篇笔记
 
 ## 对外输出学习笔记
