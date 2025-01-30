@@ -68,6 +68,7 @@
 - [] 第一篇笔记
 * https://learnblockchain.cn/article/10505
 - [] 第二篇笔记
+* https://learnblockchain.cn/article/10673
 - [] 第三篇笔记
 - [] 第四篇笔记
 
