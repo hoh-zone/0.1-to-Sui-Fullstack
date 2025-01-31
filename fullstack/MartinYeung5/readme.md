@@ -69,9 +69,13 @@
 * https://learnblockchain.cn/article/10505
 - [] 第二篇笔记
 * https://learnblockchain.cn/article/10673
+![学习记录截图](https://github.com/MartinYeung5/0.1-to-Sui-Fullstack/blob/main/fullstack/MartinYeung5/images/20250131_1.png)
 - [] 第三篇笔记
 * https://learnblockchain.cn/article/10675
+![学习记录截图](https://github.com/MartinYeung5/0.1-to-Sui-Fullstack/blob/main/fullstack/MartinYeung5/images/20250131_2.png)
 - [] 第四篇笔记
+* https://learnblockchain.cn/article/10679
+![学习记录截图](https://github.com/MartinYeung5/0.1-to-Sui-Fullstack/blob/main/fullstack/MartinYeung5/images/20250131_3.png)
 
 ## 对外输出学习笔记
 
