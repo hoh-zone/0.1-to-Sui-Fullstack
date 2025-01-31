@@ -69,13 +69,13 @@
 * https://learnblockchain.cn/article/10505
 - [] 第二篇笔记
 * https://learnblockchain.cn/article/10673
-![学习记录截图](https://github.com/MartinYeung5/0.1-to-Sui-Fullstack/blob/main/fullstack/MartinYeung5/images/20250131_1.png)
+![群里分享截图](https://github.com/MartinYeung5/0.1-to-Sui-Fullstack/blob/main/fullstack/MartinYeung5/images/20250131_1.png)
 - [] 第三篇笔记
 * https://learnblockchain.cn/article/10675
-![学习记录截图](https://github.com/MartinYeung5/0.1-to-Sui-Fullstack/blob/main/fullstack/MartinYeung5/images/20250131_2.png)
+![群里分享截图](https://github.com/MartinYeung5/0.1-to-Sui-Fullstack/blob/main/fullstack/MartinYeung5/images/20250131_2.png)
 - [] 第四篇笔记
 * https://learnblockchain.cn/article/10679
-![学习记录截图](https://github.com/MartinYeung5/0.1-to-Sui-Fullstack/blob/main/fullstack/MartinYeung5/images/20250131_3.png)
+![群里分享截图](https://github.com/MartinYeung5/0.1-to-Sui-Fullstack/blob/main/fullstack/MartinYeung5/images/20250131_3.png)
 - [] 第五篇笔记
 * https://medium.com/@martin.yeung2017/%E6%B0%B4%E5%88%86%E5%AD%90%E7%A4%BE%E5%8D%80-hoh-%E5%89%8D%E7%AB%AF%E5%85%B1%E5%AD%B8%E7%87%9F-%E7%AD%86%E8%A8%98-5-7fddd151baf1
 
