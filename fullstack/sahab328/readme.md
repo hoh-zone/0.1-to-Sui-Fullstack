@@ -9,7 +9,7 @@
 ## 作业
 - [x] 第一周: ![截图](./images/week1.png)
 - [x] 第二周: ![截图](./images/week2.png)
-- [] 第三周:
+- [x] 第三周: ![截图](./images/week3.png)
 - [] 第四周:
 
 
