@@ -10,8 +10,7 @@
 - [x] 第一周: ![截图](./images/week1.png)
 - [x] 第二周: ![截图](./images/week2.png)
 - [x] 第三周: ![截图](./images/week3.png)
-- [] 第四周:
-
+- [x] 第四周: ![截图](./images/week4.png)
 
 ## b站，推特关注
 
