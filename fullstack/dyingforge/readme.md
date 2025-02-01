@@ -10,7 +10,7 @@
 ## 作业
 - [√] 第一周:![week1作业](./images/week1.png)
 - [√] 第二周:![week2作业](0.1-to-Sui-Fullstack/fullstack/dyingforge/images/manage.png)
-- [] 第三周:
+- [√] 第三周:![week3作业](0.1-to-Sui-Fullstack/fullstack/dyingforge/images/week3.png)
 - [] 第四周:
 
 

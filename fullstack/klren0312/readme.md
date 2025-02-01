@@ -8,7 +8,7 @@
 
 ## 作业
 - [x] 第一周: [https://owb2sn9qrcc81jiv77zhv6wdmuhbujo71d2h6zkjgp56qngb2.walrus.site/](https://owb2sn9qrcc81jiv77zhv6wdmuhbujo71d2h6zkjgp56qngb2.walrus.site/)
-- [] 第二周:
+- [x] 第二周: [https://3d9r4zb5e1kt279d0wqlzj1ob5dpblftwzypkh4y6rv6gbb49c.walrus.site/](https://3d9r4zb5e1kt279d0wqlzj1ob5dpblftwzypkh4y6rv6gbb49c.walrus.site/)
 - [] 第三周:
 - [] 第四周:
 
@@ -52,7 +52,7 @@
 
 ## 在HOH社区公众号发布自己的技术文章
 
-- [] 第一篇笔记【公众号文章链接】
+- [x] 第一篇笔记【[公众号文章链接](https://mp.weixin.qq.com/s/H8UWioPkFh9rJYRbX6ONgw)】
 - [] 第二篇笔记【公众号文章链接】
 - [] 第三篇笔记【公众号文章链接】
 - [] 第四篇笔记【公众号文章链接】
