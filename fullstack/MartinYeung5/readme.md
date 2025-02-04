@@ -84,6 +84,12 @@
 - [] 第7篇笔记
 * https://medium.com/@martin.yeung2017/%E6%B0%B4%E5%88%86%E5%AD%90%E7%A4%BE%E5%8D%80-hoh-%E5%89%8D%E7%AB%AF%E5%85%B1%E5%AD%B8%E7%87%9F-%E7%AD%86%E8%A8%98-7-56dc1b6a745e
 ![群里分享截图](https://github.com/MartinYeung5/0.1-to-Sui-Fullstack/blob/main/fullstack/MartinYeung5/images/20250203_1.png)
+- [] 第8篇笔记
+https://medium.com/@martin.yeung2017/%E6%B0%B4%E5%88%86%E5%AD%90%E7%A4%BE%E5%8D%80-hoh-%E5%89%8D%E7%AB%AF%E5%85%B1%E5%AD%B8%E7%87%9F-%E7%AD%86%E8%A8%98-8-ad150925ed06
+- [] 第9篇笔记
+https://medium.com/@martin.yeung2017/%E6%B0%B4%E5%88%86%E5%AD%90%E7%A4%BE%E5%8D%80-hoh-%E5%89%8D%E7%AB%AF%E5%85%B1%E5%AD%B8%E7%87%9F-%E7%AD%86%E8%A8%98-9-74211151167e
+- [] 第10篇笔记
+https://medium.com/@martin.yeung2017/%E6%B0%B4%E5%88%86%E5%AD%90%E7%A4%BE%E5%8D%80-hoh-%E5%89%8D%E7%AB%AF%E5%85%B1%E5%AD%B8%E7%87%9F-%E7%AD%86%E8%A8%98-10-6e487db09aaa
 
 ## 对外输出学习笔记
 
