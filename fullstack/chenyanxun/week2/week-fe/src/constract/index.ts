@@ -49,15 +49,16 @@ export const queryFolder = async (addresses: string[]) => {
   const result = await suiClient.multiGetObjects({
     ids: addresses,
     options: {
-      showContent: true
+      showContent: true,
     },
   });
   const folderArr = result.map((item) => {
-    const content = item.data?.content as SuiParsedData
+    const content = item.data?.content as SuiParsedData;
     if (!("fields" in content)) {
       throw new Error("Invalid profile data structure");
     }
-    return content.fields as unknown as IFolder
-  })
-  return folderArr
+    return content.fields as unknown as IFolder;
+  });
+  return folderArr;
 };
+

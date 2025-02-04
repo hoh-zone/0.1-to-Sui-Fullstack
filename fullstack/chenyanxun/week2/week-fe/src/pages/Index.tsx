@@ -2,14 +2,16 @@ import { useCurrentAccount } from "@mysten/dapp-kit";
 import Header from "../components/Header";
 import { useEffect, useState } from "react";
 import {
-  queryFolder,
-  queryObject,
   queryProfile,
   queryState,
 } from "@/constract";
-import { IProfile, IContent, IFolder } from "../type/index";
+import { IProfile, IContent, IFolder, IAssets } from "../type/index";
 import { SuiObjectData } from "@mysten/sui/client";
-import NoProfile from "@/components/Noprofile";
+import NoProfile from "@/components/NoProfile";
+import Profile from "@/components/Profile";
+import { getCoinAndNftList, getFolderList } from "@/hooks/useGetInfo";
+
+
 function Index() {
   // 当前链接钱包
   const currentUser = useCurrentAccount();
@@ -48,25 +50,11 @@ function Index() {
       // 获取当前钱包发送的profile内容
       const profile = await queryProfile(currentUserProfileID);
       setCurrentUserProfile(profile);
-      // 查询 Coin和NFT
-      const ownObject = await queryObject(currentUser!.address);
-      if (ownObject.length) {
-        // 分开Coin和NFT
-        const coinArr: SuiObjectData[] = [];
-        const nftArr: SuiObjectData[] = [];
-        ownObject.forEach((item) => {
-          const suiObject = item.data as SuiObjectData;
-          if (suiObject.type!.includes("0x2::coin::Coin")) {
-            coinArr.push(suiObject);
-          } else {
-            nftArr.push(suiObject);
-          }
-        });
-        setCoinList(coinArr);
-        setNftList(nftArr);
-      }
-      // 查询Folder
-      const folders = await queryFolder(profile.folders);
+
+      const assets = (await getCoinAndNftList(currentUser!.address)) as IAssets;
+      setCoinList(assets.coinArr);
+      setNftList(assets.nftArr);
+      const folders = await getFolderList(profile.folders)
       setFolderList([...folders]);
     }
   };
@@ -93,7 +81,16 @@ function Index() {
           })}
         </div>
         <div className="w-1/5 border-2 border-gray-200 p-4 rounded-md ml-5">
-          {currentUserProfile ? <NoProfile /> : "有profile"}
+          {currentUserProfile ? (
+            <Profile
+              currentUserProfile={currentUserProfile}
+              coinList={coinList}
+              nftList={nftList}
+              folderList={folderList}
+            />
+          ) : (
+            <NoProfile />
+          )}
         </div>
       </div>
     </>
