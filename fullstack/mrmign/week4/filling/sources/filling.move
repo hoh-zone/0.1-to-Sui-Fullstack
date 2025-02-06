@@ -188,7 +188,7 @@ module filling::filling {
 
     public fun get_balance<T>(folder: &Folder): u64 {
         if(dynamic_field::exists_(&folder.id, type_name::get<T>())) {
-            balance::value(dynamic_field ::borrow<TypeName, Balance<T>>(&folder.id, type_name::get<T>()))
+            balance::value(dynamic_field::borrow<TypeName, Balance<T>>(&folder.id, type_name::get<T>()))
         } else {
             0
         }
