@@ -1,4 +1,5 @@
 import { getFullnodeUrl, SuiClient } from "@mysten/sui/client";
+import { SuiGraphQLClient } from "@mysten/sui/graphql";
 import { createNetworkConfig } from "@mysten/dapp-kit";
 
 const { networkConfig, useNetworkVariable, useNetworkVariables } =
@@ -20,4 +21,8 @@ const { networkConfig, useNetworkVariable, useNetworkVariables } =
 
 const suiClient = new SuiClient(networkConfig.testnet);
 
-export { useNetworkVariable, useNetworkVariables, networkConfig, suiClient };
+const suiGraphQLClient = new SuiGraphQLClient({
+  url: `https://sui-testnet.mystenlabs.com/graphql`,
+});
+
+export { useNetworkVariable, useNetworkVariables, networkConfig, suiClient, suiGraphQLClient };

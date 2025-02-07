@@ -11,6 +11,7 @@ const getCoinAndNftList = async (address: string) => {
     ownObject.forEach((item) => {
       const suiObject = item.data as SuiObjectData;
       if (suiObject.type!.includes("0x2::coin::Coin")) {
+        suiObject.type = (suiObject.type as string).match(/<(.+)>/)?.[1] || suiObject.type;
         coinArr.push(suiObject);
       } else {
         nftArr.push(suiObject);

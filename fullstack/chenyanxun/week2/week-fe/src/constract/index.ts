@@ -1,7 +1,7 @@
-import { IContent, IFolder, IProfile } from "@/type";
-import { suiClient, networkConfig } from "../networkConfig";
+import { IContent, IFolder, IFolderData, IProfile } from "@/type";
+import { suiClient, networkConfig, suiGraphQLClient } from "../networkConfig";
 import { SuiParsedData } from "@mysten/sui/client";
-
+import { graphql } from '@mysten/sui/graphql/schemas/latest';
 // 查询合约中的Event Structs
 export const queryState = async () => {
   const events = await suiClient.queryEvents({
@@ -44,6 +44,14 @@ export const queryObject = async (address: string) => {
   return ownObject.data;
 };
 
+// 查询Coin元数据
+export const queryCoinMetadata = async (coinType: string) => {
+  const meatdata = await suiClient.getCoinMetadata({
+    coinType: coinType
+  })
+  return meatdata
+}
+
 // 查询Folder
 export const queryFolder = async (addresses: string[]) => {
   const result = await suiClient.multiGetObjects({
@@ -62,3 +70,48 @@ export const queryFolder = async (addresses: string[]) => {
   return folderArr;
 };
 
+export const queryFolderData = async (folder: string) => {
+  const folderData = await suiClient.getDynamicFields({
+      parentId: folder,
+  })
+  console.log(folderData);
+  return folderData;
+}
+
+const queryFolderDataContext = graphql(`
+  query queryFolderDataContext($address:SuiAddress!) {
+      object(address:$address){
+          dynamicFields{
+              nodes{
+                  name{
+                      json
+                  }
+                  value{
+                  ...on MoveValue{
+                          json
+                      }
+                  }
+              }
+          }
+      }
+  }
+  `)
+
+// 查询放入文件夹中的Coin
+export const queryFolderDataByGraphQL = async (folderID: string) => {
+  const result = await suiGraphQLClient.query({
+      query: queryFolderDataContext,
+      variables: {
+          address: folderID
+      }
+  })
+  const folderData: IFolderData[] = result.data?.object?.dynamicFields?.nodes?.map((node) => {
+      const nameJson = node.name as { json: { name: string } };
+      const valueJson = node.value as { json: { value: string } }; // Changed unknown to string to match FolderData type
+      return {
+          name: nameJson.json.name,
+          value: valueJson.json.value
+      }
+  }) ?? [];
+  return folderData;
+}
