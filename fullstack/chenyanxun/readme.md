@@ -10,8 +10,8 @@
 ## 作业
 - [x] 第一周:![运行截图](./images/week1.png)
 - [x] 第二周:![运行截图](./images/week2-1.jpg)![运行截图](./images/week2-2.jpg)
-- [] 第三周:
-- [] 第四周:
+- [x] 第三周:![运行截图](./images/week3.jpg)
+- [x] 第四周:![运行截图](./images/week4.jpg)
 
 
 
