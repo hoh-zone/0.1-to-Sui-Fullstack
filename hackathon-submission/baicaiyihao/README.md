@@ -20,6 +20,7 @@
     目前已接触web3有1年，掌握 Move、Typescript、Rust、Java、Python等语言,能够使用move+typescript来进行独立开发项目，期望能够找到web3工作。  
     当前项目中主要负责部分: 合约开发 + 前端开发（合约交互部分）+ AI
 
-- 李四  github: xxx
-> 自我介绍&技术栈:
+- EGAL  github: https://github.com/Funnyyanne
+> 自我介绍&技术栈: Kotlin Java Python JavaScript  Dart  nodejs  React  Move半年
+
 
