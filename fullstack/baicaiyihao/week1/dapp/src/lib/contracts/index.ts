@@ -20,12 +20,12 @@ export const createProfileTx = async (name: string, description: string)=>{
     const tx = new Transaction();
     tx.moveCall({
         package: networkConfig.testnet.packageID,
-        module: "vault",
-        function: "withdraw_coin_from_manager",
+        module: "filling",
+        function: "create_profile",
         arguments: [
-            tx.object("0xf570aae3af4704e41b031cee81b3e5d4882cadf74a253af05c49be2b9be6c2aa"),
-            tx.pure.id("0xee2af550d9a51b19e602ffde66a598bb314a127520e6cacb261a1f1e4e77cbb9"),
-            tx.pure.u64("0")
+            tx.pure.string(name),
+            tx.pure.string(description),
+            tx.object(networkConfig.testnet.stateID)
         ]
     });
     return tx;
