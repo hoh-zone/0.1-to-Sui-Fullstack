@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pet_applies",
+  "info": {
+    "singularName": "pet-apply",
+    "pluralName": "pet-applies",
+    "displayName": "petApply",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "health": {
+      "type": "string"
+    },
+    "experience": {
+      "type": "string"
+    },
+    "selfStatus": {
+      "type": "string"
+    },
+    "bugget": {
+      "type": "string"
+    },
+    "pet": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::pet.pet"
+    },
+    "userId": {
+      "type": "string"
+    },
+    "state": {
+      "type": "enumeration",
+      "enum": [
+        "InReview",
+        "Pass",
+        "Reject"
+      ]
+    },
+    "userWallet": {
+      "type": "string"
+    },
+    "comment": {
+      "type": "string"
+    }
+  }
+}

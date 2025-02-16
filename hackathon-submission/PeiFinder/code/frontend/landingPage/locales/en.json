@@ -1,0 +1,52 @@
+{
+  "Hero": {
+    "title1": "Ship",
+    "title2": "Landing Page",
+    "title3": "Fast",
+    "description": "与我们共同前行，给流浪动物一个家。",
+    "titleLove": "用爱",
+    "titleEnd": "终止流浪"
+  },
+  "SocialProof": {
+    "maker": "平台在线动物数"
+  },
+  "Showcase": {
+    "title": "Showcase",
+    "description": "Join 1000+ Makers Boosting Conversions with Our Landing Page Boilerplate"
+  },
+  "Feature": {
+    "title": "Features"
+  },
+  "Steps": {
+    "title": "Adoption Steps"
+  },
+  "Pricing": {
+    "title": "Pricing",
+    "title2": "Get unlimited access.",
+    "description": "The page you are currently viewing is an open-source, free boilerplate.",
+    "doYouLike": "Do you like this landing page boilerplate?",
+    "follow": "Follow my Twitter."
+  },
+  "Testimonials": {
+    "title": "Testimonials",
+    "description1": "If you use this landing page template and recommend it on your Twitter,",
+    "description2": "please let me know",
+    "description3": ". I will display your tweet and recommendation here."
+  },
+  "FAQ": {
+    "title": "FAQs",
+    "description": "Here are some of the most frequently asked questions."
+  },
+  "CTA": {
+    "title": "Build Your Landing Page Now",
+    "description1": "Build",
+    "description2": "your landing page,",
+    "description3": "show",
+    "description4": "your product, and",
+    "description5": "start earning",
+    "description6": "!"
+  },
+  "CTAButton": {
+    "title": "了解领养流程"
+  }
+}
