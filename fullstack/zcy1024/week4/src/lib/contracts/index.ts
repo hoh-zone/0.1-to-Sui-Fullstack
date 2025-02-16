@@ -183,8 +183,9 @@ export async function createFolderTx(name: string, description: string, profileI
 
 export async function addCoinToFolderTx(folderID: string, coinID: string, coinType: string, amount: number) {
     const tx = new Transaction();
-    const coin = tx.object(coinID);
-    const [addCoin] = tx.splitCoins(coin, [tx.pure.u64(amount)]);
+    // const coin = tx.object(coinID);
+    // const [addCoin] = tx.splitCoins(coin, [tx.pure.u64(amount)]);
+    const [addCoin] = tx.splitCoins(coinType === "0x2::sui::SUI" ? tx.gas : tx.object(coinID), [tx.pure.u64(amount)]);
     tx.moveCall({
         package: networkConfig.testnet.packageID,
         module: networkConfig.testnet.moduleName,

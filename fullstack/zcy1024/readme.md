@@ -74,6 +74,8 @@
 
 ## 提交项目
 
-- [] 项目提交:
+- [x] 项目提交:<br/>
+仓库：[github](https://github.com/zcy1024/BlackSquid-Jumping/tree/main) <br/>
+在线体验：[vercel](https://blacksquid-jumping.vercel.app/)
 
 
