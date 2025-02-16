@@ -1,0 +1,11 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  padding: 0 20px;
+  box-sizing: border-box;
+  .divider {
+    margin: 16px 0;
+    border-color: #e5e5e5;
+  }
+}

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="个人博客，分享Web开发技术和经验">
+    <meta name="keywords" content="Web开发, JavaScript, HTML, CSS">
+    <meta name="author" content="你的名字">
+
+    <title>我的个人博客</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+        nav {
+            background-color: #f4f4f4;
+            padding: 0.5rem;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+        main {
+            padding: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        /* 添加 Flexbox 布局 */
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    main {
+        flex: 1;
+    }
+
+    /* 响应式导航栏 */
+    @media (max-width: 600px) {
+        nav ul {
+            display: flex;
+            flex-direction: column;
+        }
+        nav ul li {
+            margin-bottom: 10px;
+        }
+    }
+
+    /* 文章卡片样式 */
+    #home {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    article {
+        flex-basis: calc(33% - 20px);
+        margin-bottom: 20px;
+        padding: 15px;
+        background-color: #f9f9f9;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 800px) {
+        article {
+            flex-basis: calc(50% - 15px);
+        }
+    }
+
+    @media (max-width: 500px) {
+        article {
+            flex-basis: 100%;
+        }
+    }
+
+    /* 按钮样式 */
+    button {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    button:hover {
+        background-color: #555;
+    }
+   
+    /* 表单样式 */
+    form {
+        display: flex;
+        flex-direction: column;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    label, input, textarea {
+        margin-bottom: 10px;
+    }
+
+    input, textarea {
+        padding: 5px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+
+    textarea {
+        height: 100px;
+    }
+    body {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-theme {
+    background-color: #333;
+    color: #fff;
+}
+
+#theme-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+.loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #000;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">跳转到主要内容</a>
+
+    <button id="theme-toggle">切换主题</button>
+
+    <header>
+        <h1>欢迎来到我的博客</h1>
+   
+    <nav>
+        <input type="text" id="search" placeholder="搜索文章...">
+        <ul>
+            <li><a href="#home">首页</a></li>
+            <li><a href="#about">关于我</a></li>
+            <li><a href="#blog">博客文章</a></li>
+            <li><a href="#contact">联系我</a></li>
+        </ul>
+    </nav>
+</header>
+    <main id="main-content">
+    <section id="home">
+        <h2>最新文章</h2>
+        <article>
+            <h3>JavaScript基础</h3>
+            <p>JavaScript是一种轻量级的编程语言，可以用于客户端和服务器端编程。本文将介绍JavaScript的基本语法、数据类型和常用函数...</p>
+        <button aria-expanded="false" aria-controls="article-content-1">阅读更多</button>
+<div id="article-content-1" hidden>
+    <!-- 完整文章内容 -->
+</div>
+
+        </article>
+        <article>
+            <h3>CSS布局技巧</h3>
+            <p>CSS是用于设计网页样式的语言。本文将分享一些常用的CSS布局技巧，包括Flexbox和Grid布局的使用方法...</p>
+        </article>
+        <article>
+            <h3>HTML5新特性</h3>
+            <p>HTML5带来了许多新的元素和API。本文将探讨HTML5的一些重要新特性，如语义化标签、Canvas、本地存储等...</p>
+        </article>
+    </section>
+
+
+    <section id="about" style="display: none;">
+        <h2>关于我</h2>
+        <p>你好！我是一名热爱web开发的程序员。我擅长HTML、CSS和JavaScript，并且正在学习更多关于前端框架和后端技术的知识。</p>
+    </section>
+
+    <section id="contact" style="display: none;">
+        <h2>联系我</h2>
+        <form id="contact-form">
+            <label for="name">姓名：</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">邮箱：</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">消息：</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">发送</button>
+            <div id="loader" class="loader"></div>
+
+        </form>
+    </section>
+
+
+</main>
+
+    <footer>
+        <p>&copy; 2024 我的个人博客. 保留所有权利。</p>
+    </footer>
+</body>
+<script src="script.js"></script>
+</html>

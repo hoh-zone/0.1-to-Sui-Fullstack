@@ -1,0 +1,217 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Container for the page */
+.container {
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  width: 100%;
+  background-color: #1e3a8a;
+  padding: 20px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header .text-2xl {
+  font-size: 28px;
+  color: #fff;
+  background: linear-gradient(90deg, #6ee7b7, #3b82f6);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Main Section */
+main {
+  width: 100%;
+  padding: 40px 0;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+main:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile Form */
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+p.text-muted-foreground {
+  color: #6b7280;
+}
+
+.input,
+textarea,
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 8px;
+  color: #333;
+  border: 1px solid #000000;
+  background-color: #f9fafb;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 5px rgba(59, 130, 246, 0.4);
+}
+
+.input::placeholder,
+textarea::placeholder {
+  color: #9ca3af;
+}
+
+.button {
+  background-color: #3b82f6;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #2563eb;
+}
+
+.button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+/* Wallet Status */
+.wallet-status {
+  text-align: center;
+  font-size: 18px;
+  color: #34d399;
+  background-color: #ecfdf5;
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+
+.wallet-status.error {
+  color: #f87171;
+  background-color: #fee2e2;
+}
+
+button.wallet-status {
+  margin-top: 20px;
+  background-color: #9ca3af;
+  color: #fff;
+  padding: 8px 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+button.wallet-status:hover {
+  background-color: #6b7280;
+}
+
+/* Connect Button */
+.connect-btn {
+  background-color: #34d399;
+  color: white;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.connect-btn:hover {
+  background-color: #10b981;
+}
+
+.connect-btn:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+/* Fix the position of DApp and ConnectButton on the left and right of the screen */
+.connect-btn-wrapper {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000; /* Ensures it's on top of other elements */
+}
+
+.dapp-title-wrapper {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000; /* Ensures it's on top of other elements */
+}
+
+.text-2xl {
+  font-size: 28px;
+  color: #fff;
+  background: linear-gradient(90deg, #6ee7b7, #3b82f6);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Profile List */
+.profile-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+/* Profile Card */
+.profile-card {
+  /* 控制卡片的宽度，避免文本超出 */
+  width: 450px;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 控制文本显示限制长度 */
+.profile-card .owner,
+.profile-card .profile {
+  /* 限制显示的最大字符数，并使用省略号 */
+  white-space: nowrap;      /* 不换行 */
+  overflow: hidden;         /* 隐藏溢出的文本 */
+  text-overflow: ellipsis;  /* 用省略号表示超出部分 */
+  max-width: 400px;         /* 最大宽度 */
+}
+
+.profile-card .name {
+  color: #6b7280;
+}
