@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Coin {
+  id                    String   @id @default(cuid())
+  name                  String
+  symbol                String
+  description           String
+  icon_url              String
+  ca                    String
+  pool_id               String
+  token_type            String
+  initial_token_supply  String
+  max_sui_cap           String
+  virtual_sui_reserve   String
+  virtual_token_reserve String
+  sui_reserve           String
+  token_reserve         String
+  liquidity             String
+  creator               String
+  price                 Float    @default(0)
+  marketcap             Float    @default(0)
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+}
