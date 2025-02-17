@@ -1,0 +1,151 @@
+/* Backpack.css 优化 */
+.backpack {
+    flex: 9;
+    margin: 5px;
+    background: linear-gradient(145deg, #ffb6c1, #ffc0cb);
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 12px;
+    position: relative;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.slot {
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.slot:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.nft-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* NFT信息弹窗样式 */
+.nft-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+}
+
+.modal-image {
+    max-width: 200px;
+    margin: 0 auto;
+    display: block;
+}
+
+.nft-info {
+    margin-top: 20px;
+}
+
+.affection-data {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #e91e63;
+}
+
+.loading, .error {
+    padding: 20px;
+    text-align: center;
+}
+
+/* 新增交易弹窗样式 */
+.transfer-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    z-index: 1000;
+    width: 90%;
+    max-width: 400px;
+}
+
+.transfer-dialog h3 {
+    margin: 0 0 20px;
+    color: #e91e63;
+}
+
+.address-input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.dialog-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+.confirm-button, .cancel-button {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.confirm-button {
+    background: #e91e63;
+    color: white;
+}
+
+.cancel-button {
+    background: #eee;
+    color: #666;
+}
+
+/* 响应式优化 */
+@media (max-width: 768px) {
+    .backpack {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+        padding: 10px;
+    }
+    
+    .slot {
+        padding: 8px;
+    }
+}

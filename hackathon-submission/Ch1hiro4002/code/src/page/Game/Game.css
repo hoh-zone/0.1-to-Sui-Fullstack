@@ -1,0 +1,23 @@
+.game-container {
+    display: flex;
+    flex-direction: column; /* 纵向排列 */
+    height: 100vh; 
+    width: 100%;
+}
+.up-container {
+    flex: 8; /* 占 80% */
+    background-image: url('/public/maps/lovelink-map.png');
+    background-repeat: no-repeat; /* 防止图片重复 */
+    background-size: cover; /* 使背景图片覆盖整个元素 */
+    background-position: center; /* 图片居中显示 */
+}
+
+.down-container {
+    flex: 2; /* 占 20% */
+    background-color: #FF4D6D; 
+    display: flex;
+    flex-direction: row; /* 横向排列 */
+}
+
+
+
