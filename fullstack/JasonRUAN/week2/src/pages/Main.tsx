@@ -20,9 +20,9 @@ const Main = () => {
             const profile = await queryProfile(userProfile);
             const objects = await queryObjects(currentUser.address);
             const folders = await queryFolders(profile.folders);
-
+            
             const processedObjects = processObject(objects);
-
+            
             // Fetch coin metadata first
             if (processedObjects.Coin) {
                 const updatedCoins = await Promise.all(

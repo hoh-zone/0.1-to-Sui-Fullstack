@@ -9,7 +9,7 @@ interface ProfileCardProps {
 const ProfileCard = ({ profile }: ProfileCardProps) => {
     const navigate = useNavigate();
     return (
-        <div className="flex flex-col gap-6 border-2 border-gray-200 p-6 rounded-lg w-full max-w-2xl">
+        <div className="flex flex-col gap-6 border-2 border-gray-200 p-6 rounded-lg w-full max-w-4xl">
             <div className="text-center">
                 <h1 className="text-3xl font-bold tracking-tighter">Profile</h1>
             </div>

@@ -2,19 +2,40 @@ import FolderCard from "@/components/folder-card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { addCoinToFolderTx, createFolderTx, queryFolderDataByGraphQL } from "@/lib/contracts";
+import { addCoinToFolderTx, createFolderTx, queryFolderDataByGraphQL, queryCoinMetadata } from "@/lib/contracts";
 import { DisplayProfile, Folder, FolderData, SuiObject } from "@/type";
 import { useSignAndExecuteTransaction } from "@mysten/dapp-kit";
 import { useState } from "react";
-
-import { useLocation } from "react-router-dom";
+import { useLocation, Navigate } from "react-router-dom";
+import { formatModuleName } from "@/lib/utils";
 
 const User = () => {
-    const { profile } = useLocation().state as { profile: DisplayProfile };
+    const location = useLocation();
+    
+    // 如果没有 profile 数据，重定向到主页
+    if (!location.state?.profile) {
+        return <Navigate to="/" replace />;
+    }
+
+    const { profile } = location.state as { profile: DisplayProfile };
     const { mutate: signAndExecuteTransaction } = useSignAndExecuteTransaction();
     const [selectedFolder, setSelectedFolder] = useState<Folder | null>(null);
-    const [amount, setAmount] = useState<number>(0);
+    const [assetAmounts, setAssetAmounts] = useState<Record<string, number>>({});
     const [folderData, setFolderData] = useState<FolderData[]>([]);
+    const [metadataMap, setMetadataMap] = useState<Record<string, any>>({});
+
+    const fetchCoinMetadata = async (coinType: string) => {
+        if (!metadataMap[coinType]) {
+            const metadata = await queryCoinMetadata(coinType);
+            setMetadataMap(prev => ({
+                ...prev,
+                [coinType]: metadata
+            }));
+        }
+
+        console.log(">>>", JSON.stringify(metadataMap, null, 2));
+    };
+
     const handleFolderCreated = async ({ name, description }: { name: string, description: string }) => {
         const tx = await createFolderTx(name, description, profile.id.id);
         await signAndExecuteTransaction({
@@ -25,21 +46,30 @@ const User = () => {
     }
     const handleFolderSelected = async (folder: Folder) => {
         setSelectedFolder(folder);
-        console.log(folder.id.id);
         const folderData = await queryFolderDataByGraphQL(folder.id.id);
         setFolderData(folderData);
+        
+        for (const data of folderData) {
+            await fetchCoinMetadata(data.name);
+        }
     }
     const handleAddToFolder = async (asset: SuiObject) => {
         if (!selectedFolder){
             console.log("No folder selected");
             return;
         };
+        const amount = assetAmounts[asset.id] || 0;
         const coinAmount = amount * 10 ** (asset.coinMetadata?.decimals || 0);
         const tx = await addCoinToFolderTx(selectedFolder.id.id, asset.id, asset.type, coinAmount);
         await signAndExecuteTransaction({
             transaction: tx,
         }, { onSuccess: () => {
             console.log("Asset added to folder successfully");
+            setAssetAmounts(prev => {
+                const newAmounts = { ...prev };
+                delete newAmounts[asset.id];
+                return newAmounts;
+            });
         } });
     }
     return (
@@ -73,8 +103,11 @@ const User = () => {
                                                         type="number" 
                                                         placeholder="Amount" 
                                                         className="w-24" 
-                                                        value={amount} 
-                                                        onChange={(e) => setAmount(Number(e.target.value))} 
+                                                        value={assetAmounts[asset.id] || ''} 
+                                                        onChange={(e) => setAssetAmounts(prev => ({
+                                                            ...prev,
+                                                            [asset.id]: Number(e.target.value)
+                                                        }))} 
                                                     />
                                                     <Button onClick={() => handleAddToFolder(asset)}>Add to folder</Button>
                                                 </div>
@@ -93,14 +126,19 @@ const User = () => {
                             onFolderCreated={handleFolderCreated} 
                             onFolderSelected={handleFolderSelected} 
                         />
-                        
+
                         {folderData.length > 0 && (
                             <div className="bg-gray-50 p-4 rounded-md">
                                 <h3 className="font-medium mb-4">Folder Contents</h3>
                                 {folderData.map((data, index) => (
                                     <div key={index} className="border-b border-gray-200 py-2 last:border-0">
-                                        <p className="font-medium truncate">{data.name}</p>
-                                        <p className="text-gray-600">{Number(data.value)}</p>
+                                        <p className="font-medium">0x{formatModuleName(data.name)}</p>
+                                        <p className="text-gray-600">
+                                            {metadataMap[data.name] 
+                                                ? (Number(data.value) / Math.pow(10, metadataMap[data.name].decimals)).toFixed(2)
+                                                : Number(data.value)
+                                            }
+                                        </p>
                                     </div>
                                 ))}
                             </div>
