@@ -1,0 +1,10 @@
+{
+  "version": "v1",
+  "packages": {
+    "contract-strapi-plugin": {
+      "signature": "000790a25556753928acfbb0511f6587",
+      "link": true,
+      "replaced": "file:.yalc/contract-strapi-plugin"
+    }
+  }
+}

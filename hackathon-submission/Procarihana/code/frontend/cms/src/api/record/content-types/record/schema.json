@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "records",
+  "info": {
+    "singularName": "record",
+    "pluralName": "records",
+    "displayName": "Record",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "string"
+    },
+    "submitText": {
+      "type": "string"
+    },
+    "submitDate": {
+      "type": "datetime"
+    },
+    "result": {
+      "type": "enumeration",
+      "enum": [
+        "Pass",
+        "Reject",
+        "Abandon",
+        "InReview"
+      ]
+    },
+    "comment": {
+      "type": "string"
+    },
+    "pet": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::pet.pet"
+    },
+    "userId": {
+      "type": "string"
+    },
+    "imgs": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "contract": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::pet-contract.pet-contract"
+    }
+  }
+}
