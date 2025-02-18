@@ -1,0 +1,15 @@
+.bg-glitch::before {
+	content: "";
+	display: flex;
+	position: absolute;
+	--gif-texture: url(https://64.media.tumblr.com/da60c13b478dda09ab90c27e880983b8/tumblr_nd4pwdPKdc1tun3l0o1_1280.gifv);
+	background-image: var(--gif-texture);
+	height: 100%;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	mix-blend-mode: screen;
+	pointer-events: none;
+	opacity: 64%;
+	z-index: 3;
+}
