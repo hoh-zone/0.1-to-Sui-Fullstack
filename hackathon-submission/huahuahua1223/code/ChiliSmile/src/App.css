@@ -1,0 +1,740 @@
+/* 全局样式 */
+:root {
+  --primary-color: #1890ff;
+  --border-radius: 12px;
+  --card-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  --hover-shadow: 0 12px 32px rgba(0,0,0,0.12);
+  --gradient-bg: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
+}
+
+/* 重置一些基础样式 */
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+/* 布局样式 */
+.ant-layout {
+  min-height: 100vh;
+  background: #fff !important;
+}
+
+.ant-layout-header {
+  background: #001529 !important;
+  padding: 0 50px;
+  height: 64px;
+  line-height: 64px;
+  position: relative;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  margin-right: 40px;
+}
+
+.ant-layout-content {
+  min-height: calc(100vh - 64px - 70px);
+  background: #fff;
+}
+
+/* 列表页样式 */
+.artwork-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.artwork-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.artwork-header h2 {
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+
+.artwork-header .ant-input-affix-wrapper {
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.artwork-header .ant-input-affix-wrapper:hover,
+.artwork-header .ant-input-affix-wrapper:focus {
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+/* 卡片样式 */
+.artwork-cover {
+  height: 160px;
+  background: linear-gradient(135deg, #f6f8fa 0%, #f0f2f5 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.artwork-type {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.model-icon {
+  font-size: 36px;
+  line-height: 1;
+}
+
+.model-text {
+  font-size: 14px;
+  color: #666;
+  padding: 4px 12px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+}
+
+.artwork-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.artwork-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.artwork-card .ant-card-body {
+  padding: 16px;
+}
+
+.artwork-card .ant-card-meta-title {
+  font-size: 16px;
+  margin-bottom: 8px !important;
+  color: #262626;
+}
+
+.artwork-card .ant-card-meta-description {
+  height: auto;
+}
+
+.model-tag {
+  font-size: 12px;
+  padding: 2px 8px;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+
+.card-description {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.card-footer {
+  margin-top: 12px;
+  color: #999;
+  font-size: 12px;
+}
+
+.artwork-card .ant-card-actions {
+  background: #fafafa;
+  border-top: 1px solid #f0f0f0;
+}
+
+.artwork-card .ant-card-actions > li {
+  margin: 12px 0;
+}
+
+.action-icon {
+  font-size: 14px;
+  color: #666;
+}
+
+.action-count {
+  font-size: 14px;
+  margin-left: 4px;
+  color: #666;
+}
+
+/* 详情页样式 */
+.artwork-detail-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.back-button {
+  margin-bottom: 24px;
+  border-radius: 20px;
+  padding: 4px 20px;
+}
+
+.detail-card {
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  padding: 12px;
+}
+
+.artwork-meta {
+  margin: 24px 0;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: var(--border-radius);
+}
+
+.owner-name {
+  font-weight: 600;
+  margin-left: 8px;
+}
+
+.artwork-content {
+  padding: 24px 0;
+}
+
+.artwork-desc {
+  font-size: 18px;
+  color: #262626;
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+.artwork-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #595959;
+  white-space: pre-wrap;
+}
+
+.artwork-actions {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.like-button {
+  min-width: 120px;
+  height: 40px;
+  border-radius: 20px;
+  font-size: 16px;
+  box-shadow: 0 2px 8px rgba(24, 144, 255, 0.2);
+}
+
+/* 创建页样式 */
+.create-artwork-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.create-form-card {
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  padding: 24px;
+}
+
+.create-form-card h2 {
+  text-align: center;
+  margin-bottom: 32px;
+  font-size: 28px;
+  background: linear-gradient(45deg, #1890ff, #36cfc9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.create-form .ant-form-item-label > label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #262626;
+}
+
+.create-form .ant-input,
+.create-form .ant-select-selector {
+  border-radius: 8px;
+  padding: 8px 16px;
+}
+
+.create-form .ant-input-textarea {
+  border-radius: 8px;
+}
+
+.create-form .ant-btn {
+  height: 44px;
+  padding: 0 32px;
+  border-radius: 22px;
+  font-size: 16px;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .ant-layout-content {
+    padding: 24px 16px;
+  }
+  
+  .artwork-header h2 {
+    font-size: 24px;
+  }
+  
+  .artwork-cover {
+    height: 180px;
+  }
+  
+  .create-form-card {
+    padding: 16px;
+  }
+}
+
+/* 无限滚动加载相关样式 */
+.infinite-scroll-component {
+  overflow: hidden !important; /* 防止出现双滚动条 */
+}
+
+/* 加载状态样式 */
+.ant-spin-container {
+  transition: all 0.3s;
+}
+
+.ant-spin-nested-loading {
+  position: relative;
+}
+
+/* 返回顶部按钮样式 */
+.back-top-btn {
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  background-color: #1890ff;
+  color: #fff;
+  text-align: center;
+  font-size: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s;
+}
+
+.back-top-btn:hover {
+  background-color: #40a9ff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* 自定义滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+/* 导航栏样式 */
+.header {
+  background: linear-gradient(90deg, #001529 0%, #003a70 100%) !important;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  height: 80px;
+  line-height: 64px;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 100%;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  margin-right: 48px;
+  text-decoration: none;
+  background: linear-gradient(45deg, #fff 30%, #40a9ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.5px;
+  height: 64px;
+  line-height: 64px;
+}
+
+.logo:hover {
+  opacity: 0.9;
+}
+
+.nav-menu {
+  flex: 1;
+  background: transparent !important;
+  border-bottom: none !important;
+  min-width: 0;
+  height: 64px;
+  line-height: 64px;
+}
+
+.nav-menu .ant-menu-item {
+  padding: 0 24px;
+  margin: 0 4px !important;
+  font-size: 15px;
+  line-height: 64px !important;
+  height: 64px !important;
+}
+
+.nav-menu .ant-menu-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white !important;
+}
+
+.nav-menu .ant-menu-item-selected {
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+
+.nav-menu .ant-menu-item::after {
+  display: none !important;
+}
+
+.nav-menu .ant-menu-item a {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.nav-menu .ant-menu-item-selected a {
+  color: #fff !important;
+}
+
+.nav-menu .anticon {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+/* Connect Button 样式 */
+.header-content :global(.sui-connect-button) {
+  margin-left: 16px;
+  height: 32px;
+  padding: 0 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: white;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  top: 0;
+}
+
+.header-content :global(.sui-connect-button:hover) {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.header-content :global(.sui-connect-button:active) {
+  transform: translateY(0);
+}
+
+/* 钱包图标样式 */
+.header-content :global(.sui-connect-button svg) {
+  width: 16px;
+  height: 16px;
+  opacity: 0.9;
+  position: relative;
+  top: -1px;
+}
+
+/* 连接状态样式 */
+.header-content :global(.sui-connect-button.connected) {
+  background: rgba(24, 144, 255, 0.2);
+  border-color: rgba(24, 144, 255, 0.3);
+}
+
+.header-content :global(.sui-connect-button.connected:hover) {
+  background: rgba(24, 144, 255, 0.3);
+  border-color: rgba(24, 144, 255, 0.4);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .header-content {
+    padding: 0 16px;
+  }
+  
+  .logo {
+    font-size: 20px;
+    margin-right: 24px;
+  }
+  
+  .nav-menu .ant-menu-item {
+    padding: 0 16px;
+    margin: 0 2px !important;
+  }
+}
+
+/* 页面通用样式 */
+.page-title {
+  text-align: center;
+  margin-bottom: 32px !important;
+  background: linear-gradient(45deg, #1890ff, #36cfc9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.artwork-title {
+  font-size: 32px !important;
+  font-weight: 600 !important;
+  margin-bottom: 24px !important;
+  color: #262626;
+}
+
+.model-tag-large {
+  font-size: 14px !important;
+  padding: 4px 16px !important;
+  border-radius: 16px !important;
+}
+
+/* 表单样式优化 */
+.create-form .ant-form-item {
+  margin-bottom: 24px;
+}
+
+.create-form .ant-form-item-label > label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #262626;
+}
+
+.create-form .ant-input,
+.create-form .ant-select-selector {
+  border-radius: 8px;
+  border-color: #d9d9d9;
+}
+
+.create-form .ant-input:hover,
+.create-form .ant-select-selector:hover {
+  border-color: #40a9ff;
+}
+
+.create-form .ant-input:focus,
+.create-form .ant-select-selector:focus {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+.submit-button {
+  min-width: 120px;
+  height: 44px;
+  border-radius: 22px;
+  font-size: 16px;
+  box-shadow: 0 2px 8px rgba(24, 144, 255, 0.2);
+}
+
+.cancel-button {
+  min-width: 100px;
+  height: 44px;
+  border-radius: 22px;
+  font-size: 16px;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .artwork-title {
+    font-size: 24px !important;
+  }
+  
+  .artwork-meta {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .create-form-card {
+    padding: 16px;
+  }
+}
+
+/* 作品设置相关样式 */
+.settings-button {
+  border-radius: 20px;
+  padding: 4px 20px;
+}
+
+.setting-item {
+  padding: 16px 0;
+}
+
+.setting-label {
+  font-size: 16px;
+  color: #262626;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.transfer-warning {
+  margin-top: 16px;
+  padding: 12px;
+  background-color: #fffbe6;
+  border: 1px solid #ffe58f;
+  border-radius: 8px;
+  color: #faad14;
+  font-size: 14px;
+}
+
+/* 模态框样式优化 */
+.ant-modal-content {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.ant-modal-header {
+  margin-bottom: 24px;
+}
+
+.ant-modal-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.settings-content {
+  padding: 0 8px;
+}
+
+.ant-switch {
+  min-width: 60px;
+}
+
+/* 钱包按钮和下拉菜单样式 */
+.wallet-button {
+  padding: 6px 16px;
+  height: 36px;
+  line-height: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 18px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  margin-left: 16px;
+}
+
+.wallet-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+.wallet-dropdown .ant-dropdown-menu {
+  padding: 4px;
+  background: #001529;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.wallet-address {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 8px 12px;
+  color: rgba(255, 255, 255, 0.85);
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.wallet-address:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.wallet-address:hover .anticon {
+  color: #1890ff;
+}
+
+.ant-dropdown-menu-item {
+  padding: 8px 12px !important;
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.ant-dropdown-menu-item:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.ant-dropdown-menu-item-danger {
+  color: #ff7875 !important;
+}
+
+.ant-dropdown-menu-item-danger:hover {
+  background: rgba(255, 77, 79, 0.16) !important;
+}
+
+.ant-dropdown-menu-item-divider {
+  background-color: rgba(255, 255, 255, 0.1);
+  margin: 4px 0 !important;
+}
+
+/* 个人中心样式 */
+.user-profile-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.profile-card {
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+}
+
+.profile-header {
+  margin-bottom: 32px;
+  padding: 24px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.artwork-stats {
+  margin-top: 8px;
+  display: flex;
+  gap: 16px;
+  color: #666;
+}
+
+.artwork-stats .anticon {
+  margin-right: 4px;
+}

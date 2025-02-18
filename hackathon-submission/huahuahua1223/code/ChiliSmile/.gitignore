@@ -1,0 +1,40 @@
+# Dependencies
+node_modules
+.pnpm-store/
+
+# Build
+dist/
+build/
+
+# Testing
+coverage/
+
+# Environment
+.env*
+!.env.example
+
+# IDE
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.iml
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# System
+.DS_Store
+Thumbs.db
+
+# TypeScript
+*.tsbuildinfo
+
+# Cache
+.temp/
+.cache/
+
+# Misc
+*.local
+.eslintcache
