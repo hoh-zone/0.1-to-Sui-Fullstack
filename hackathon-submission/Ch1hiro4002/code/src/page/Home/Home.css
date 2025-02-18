@@ -1,0 +1,38 @@
+.home {
+    text-align: center;
+    padding: 20px;
+}
+/* 主题介绍 */
+.theme {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* 背景故事 */
+.story {
+    font-size: 18px;
+    max-width: 600px;
+    opacity: 0.8;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* 进入游戏按钮 */
+.start-button {
+    padding: 12px 25px;
+    font-size: 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    background: #ff4d6d;
+    color: white;
+    box-shadow: 0 0 15px rgba(255, 77, 109, 0.7);
+    transition: all 0.3s ease;
+}
+
+.start-button:hover {
+    background: #ff0055;
+    box-shadow: 0 0 20px rgba(255, 0, 85, 0.8);
+}

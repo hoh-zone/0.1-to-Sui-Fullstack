@@ -1,0 +1,72 @@
+.sidebar {
+    width: 250px;
+    height: 75%;
+    background-color: #FFC0CB;
+    border-color: #FF4D6D;
+    border-style: solid;
+    border-width: 6px;
+    border-radius: 0 10px 10px 0;
+    color: black;
+    transition: width 0.3s ease;
+    position: fixed;
+    left: 0;
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.sidebar.collapsed {
+    width: 60px;
+}
+
+.sidebar-header {
+    margin-bottom: 20px;
+}
+
+.profile-image {
+    border-color: black;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.sidebar-content {
+    text-align: center;
+}
+
+.sidebar-content h3 {
+    margin: 10px 0;
+}
+
+.sidebar-content p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.toggle-button {
+    position: absolute;
+    right: -30px;
+    top: 300px;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle-button:hover {
+    background-color: #34495e;
+}
+
+.collapsed-text {
+    margin-top: 250px;
+}

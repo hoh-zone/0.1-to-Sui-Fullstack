@@ -1,0 +1,233 @@
+.action-button {
+    flex: 1;
+    margin: 5px;
+    background-color: #FFC0CB;
+    padding: 10px; /* 内边距 */
+    box-sizing: border-box; /* 确保 padding 不影响宽度 */
+    border-radius: 10px
+}
+
+.ac-button {
+    width: 100%;
+    height: 35px;
+    padding: 5px;
+    margin: 7px 0; /* 按钮之间的间距 */
+    background-color: rgba(255, 255, 255, 0.2); /* 半透明背景 */
+    color: rgb(100, 100, 100); /* 文字颜色 */
+    text-align: center; /* 文字居中 */
+    border-radius: 5px; /* 圆角 */
+    cursor: pointer; /* 鼠标悬停时显示手型 */
+    transition: background-color 0.3s ease; /* 悬停动画 */
+}
+
+.ac-button:hover {
+    background-color: rgba(255, 255, 255, 0.3); /* 悬停时背景变亮 */
+}
+
+/* 商店弹窗样式 */
+.shop-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.shop-modal-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.shop-modal-content h2 {
+    color: #FF4D6D;
+    margin-bottom: 20px;
+}
+
+.shop-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.shop-item {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.shop-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.shop-item img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.shop-item p {
+    margin: 10px 0;
+    color: #333;
+}
+
+.shop-item button {
+    background-color: #7F5AF0;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.shop-item button:hover {
+    background-color: #6F4AD0;
+}
+
+.close-button {
+    margin-top: 20px;
+    background-color: #FF4D6D;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.close-button:hover {
+    background-color: #E0445C;
+}
+
+/* 个人信息弹窗样式 */
+.user-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.user-modal-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.user-modal-content h2 {
+    color: #FF4D6D;
+    margin-bottom: 20px;
+}
+
+.user-info {
+    font-size: 16px;
+    color: #333;
+}
+
+.user-info p {
+    margin: 10px 0;
+}
+
+.close-button {
+    margin-top: 20px;
+    background-color: #FF4D6D;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.close-button:hover {
+    background-color: #E0445C;
+}
+
+/* 头像样式 */
+.user-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* 表单样式 */
+.user-info form div {
+    margin-bottom: 10px;
+}
+
+.user-info form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.user-info form input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* 按钮容器 */
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* 修改信息按钮 */
+.edit-button {
+    margin-top: 20px;
+    background-color: #FF4D6D;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.edit-button:hover {
+    background-color: #6F4AD0;
+}
+
+/* 保存按钮 */
+.save-button {
+    margin-top: 20px;
+    background-color: #FF4D6D;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
