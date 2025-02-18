@@ -7,9 +7,9 @@
 
 ## 作业
 - [x] 第一周: [https://week-one-three.vercel.app/](https://week-one-three.vercel.app/)
-- [] 第二周:
-- [] 第三周:
-- [] 第四周:
+- [x] 第二周:<img src="images/week2.png" alt="week2" style="zoom:80%;" />
+- [x] 第三周:<img src="images/week3.png" alt="week3" style="zoom:80%;" />
+- [x] 第四周:<img src="images/week4.png" alt="week4" style="zoom:80%;" />
 
 ## b站，推特关注
 
