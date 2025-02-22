@@ -1,0 +1,5 @@
+configs/environment/.env
+web-ext-artifacts
+dist
+node_modules
+.env
