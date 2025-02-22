@@ -1,5 +1,8 @@
 ## Project
 - 项目名称: 链上萌卡：Sui次元竞技场 (On-Chain Moe Cards: Sui Dimensional Arena)
+- 项目仓库：https://github.com/0xdiymax/sui-dimarena
+- 项目URL：https://sui-dimarena.vercel.app
+
 > 描述: 链上萌卡：Sui次元竞技场是一款独具魅力的跨次元萌系卡牌竞技游戏，完全构建于Sui区块链之上。游戏汇聚了来自不同次元的萌系角色，将他们化身为精美的卡牌，供玩家收集和操控。
 
 > 玩家可以在充满未来科技感的次元竞技场中，组建自己的跨次元萌卡战队，与其他玩家进行紧张刺激的PVP对战。游戏强调卡牌的次元属性和技能联动，你需要深入了解不同次元角色的特点，才能搭配出最强大的卡组，在竞技场中脱颖而出。
