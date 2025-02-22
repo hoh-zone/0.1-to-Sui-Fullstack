@@ -2,6 +2,8 @@ import { getFullnodeUrl, SuiClient } from '@mysten/sui/client';
 import { aesDecrypt } from './aesUtil';
 import { AccountInfo,PasswordObject, callAddPassword, getPasswordObjects } from './0xPasswordUtil';
 
+
+const network = import.meta.env.VITE_SUI_NETWORK_ENV;
 // 配置存储key
 export const SELECTED_ACCOUNT_KEY = 'SELECTED_ACCOUNT';
 export const EXTENSION_ID_KEY = 'EXTENSION_ID';
@@ -67,7 +69,7 @@ const onExtMessage = async (message: any) => {
   console.log("收到消息", message);
   if (message.payload.method == "signTransactionDataResponse") {
     console.log("签名响应", message);
-    const rpcUrl = getFullnodeUrl('testnet');
+    const rpcUrl = getFullnodeUrl(network);
     const client = new SuiClient({ url: rpcUrl });
     let saveKey = 'tx' + message.id;
     let txData = await getSessionStorage(saveKey);
@@ -94,9 +96,12 @@ const onInnerMessage = async (message: any) => {
   console.log("onInnerMessage", message);
   if ("save_password" == message.method) {
     mk = await getStorage(MK_KEY);
+    const account = await getStorage(SELECTED_ACCOUNT_KEY);
     if (mk) {
       let { password, url, username } = message.args;
-      callAddPassword(extChannel, password, url, username, mk);
+
+
+      callAddPassword(extChannel, password, url, username, mk, account.address);
     } else {
       console.log("MK not set")
     }

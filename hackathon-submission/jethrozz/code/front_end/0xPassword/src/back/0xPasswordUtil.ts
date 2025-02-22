@@ -5,6 +5,13 @@ import { getFullnodeUrl, SuiClient } from '@mysten/sui/client';
 import { toBase64 } from '@mysten/sui/utils';
 import { aesEncrypt, aesDecrypt } from './aesUtil';
 
+const network = import.meta.env.VITE_SUI_NETWORK_ENV;
+console.log("network :", network);
+const packageId = import.meta.env.VITE_PASSWORD_MANAGER_ADDR;
+console.log("packageId :", packageId);
+const moudle = import.meta.env.VITE_PASSWORD_MANAGER_MOUDLE;
+console.log("moudle :", moudle);
+
 // 账户信息接口
 export interface AccountInfo {
     id: string; // UUID格式
@@ -81,17 +88,17 @@ function createSignRequest(data: string, argsId: string): SignRequest {
     };
 }
 
-export async function callAddPassword(port: chrome.runtime.Port | null, pw: string, webSite: string, user: string, mk: string | null){
+export async function callAddPassword(port: chrome.runtime.Port | null, pw: string, webSite: string, user: string, mk: string | null, address: string){
     if(!port){
         throw new Error("未同钱包插件建立连接");
     }
     let {encryptedData, salt, iv} = await aesEncrypt(pw, mk);
     const tx = new Transaction();
-    tx.setSender('0x91459991a3e1778334dc4bd007cb90fe9989a4aabfcef4ed19095e712507ea43');
+    tx.setSender(address);
     //add_password(website: String,username : String, pw : String, iv : String, salt : String, ctx : &mut TxContext){
     tx.moveCall({
-      package: "0xe97359510c7a9a4c864580cf2bdf10b9a12ae432a037064bdc42dde3ea761d44",
-      module: 'PasswordManager',
+      package: packageId,
+      module: moudle,
       function: 'add_password',
       arguments: [
         tx.pure(bcs.string().serialize(webSite).toBytes()), //
@@ -101,7 +108,7 @@ export async function callAddPassword(port: chrome.runtime.Port | null, pw: stri
         tx.pure(bcs.string().serialize(salt).toBytes())
         ]
   });
-  const rpcUrl = getFullnodeUrl('testnet');
+  const rpcUrl =  getFullnodeUrl(network);
   getStorage
   let account = await getStorage("SELECTED_ACCOUNT") as AccountInfo;
   if(!account){
@@ -128,36 +135,23 @@ export async function getPasswordObjects(addr: string, pageOrigin : string, mk: 
   const suiGraphQLClient = new SuiGraphQLClient({
     url: import.meta.env.VITE_SUI_GRAPHQL_URL || "https://sui-testnet.mystenlabs.com/",
   })
+  let type = packageId+"::"+moudle+"::Password";
+  console.log("type",type);
   let data = (await suiGraphQLClient.query({
     query: `
     query($addr: SuiAddress!) {
 address(address: $addr) {
-  objects(filter: {type: "0xe97359510c7a9a4c864580cf2bdf10b9a12ae432a037064bdc42dde3ea761d44::PasswordManager::Password"}) {
+  objects(filter: {type: "`+type+`"}) {
     edges {
       node {
-        version
-        status
-        address
-        digest
-        owner {
-          ... on AddressOwner {
-            owner {
-              address
-            }
-          }
-        }
         contents {
-          type {
-            layout
-          }
           json
         }
       }
     }
   }
 }
-}
-    `,
+}`,
     variables: {
       addr
     }

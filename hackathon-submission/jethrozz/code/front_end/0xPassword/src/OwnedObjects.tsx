@@ -6,6 +6,8 @@ import AES from 'crypto-js/aes';
 import encUtf8 from 'crypto-js/enc-utf8';
 
 const configSalt = "0xpassword";
+const packageId = import.meta.env.VITE_PASSWORD_MANAGER_ADDR;
+const moudle = import.meta.env.VITE_PASSWORD_MANAGER_MOUDLE;
 
 declare global {
   interface Window {
@@ -122,29 +124,15 @@ export function OwnedObjects() {
   };
 
 
-  async function getPasswordObjects(suiGraphQLClient: SuiGraphQLClient, addr: string): Promise<PasswordNodeObject> {
+  async function getPasswordObjects(suiGraphQLClient: SuiGraphQLClient, addr: string, type : string): Promise<PasswordNodeObject> {
     return (await suiGraphQLClient.query({
       query: `
       query($addr: SuiAddress!) {
   address(address: $addr) {
-    objects(filter: {type: "0xe97359510c7a9a4c864580cf2bdf10b9a12ae432a037064bdc42dde3ea761d44::PasswordManager::Password"}) {
+    objects(filter: {type: "`+type+`"}) {
       edges {
         node {
-          version
-          status
-          address
-          digest
-          owner {
-						... on AddressOwner {
-              owner {
-								address
-              }
-            }
-          }
           contents {
-            type {
-              layout
-            }
             json
           }
         }
@@ -165,7 +153,9 @@ export function OwnedObjects() {
 
   useEffect(() => {
     if (account?.address) { // 当account存在且有address时执行
-      getPasswordObjects(suiGraphQLClient, account.address)
+      let type = packageId+"::"+moudle+"::Password";
+
+      getPasswordObjects(suiGraphQLClient, account.address, type)
         .then((data) => {
           console.log("getPasswordObjects", data);
           console.log('getPasswordObjects 页面源:', pageOriginRef.current);
