@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "0xPassword",
+    "version": "0.0.1",
+    "description": "一款基于sui的去中心化密码管理工具",
+    "background": {
+      "service_worker":"back.js",
+      "type": "module"
+    },
+    "permissions": [
+      "activeTab",
+      "scripting",
+      "storage"
+    ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+    "action": {
+      "default_popup": "index.html",
+      "default_width": 400,
+      "default_height": 600
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://*/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
